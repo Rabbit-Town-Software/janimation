@@ -1,0 +1,10 @@
+-classpath 'C:\\Users\\Case\\IdeaProjects\\janimation\\build\\classes\\java\\main;C:\\Users\\Case\\IdeaProjects\\janimation\\build\\resources\\main'
+-d 'C:\\Users\\Case\\IdeaProjects\\janimation\\build\\docs\\javadoc'
+-doctitle 'janimation 1.0.0 API'
+-notimestamp 
+-quiet 
+-windowtitle 'janimation 1.0.0 API'
+'C:\\Users\\Case\\IdeaProjects\\janimation\\src\\main\\java\\org\\rabbittownsoftware\\janimation\\Animatable.java'
+'C:\\Users\\Case\\IdeaProjects\\janimation\\src\\main\\java\\org\\rabbittownsoftware\\janimation\\AnimationController.java'
+'C:\\Users\\Case\\IdeaProjects\\janimation\\src\\main\\java\\org\\rabbittownsoftware\\janimation\\AnimationLoader.java'
+'C:\\Users\\Case\\IdeaProjects\\janimation\\src\\main\\java\\org\\rabbittownsoftware\\janimation\\Animator.java'
