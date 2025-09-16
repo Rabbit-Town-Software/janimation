@@ -13,23 +13,74 @@ It provides:
 
 ## Installation
 
-### Option 1 – Manual JAR
-Download the latest [release](https://github.com/Rabbit-Town-Software/janimation/releases) and add it to your project.
+### Manual JAR (Recommended for most users)
 
-**Gradle**
+Download the latest **janimation-1.0.0.jar**, **janimation-1.0.0-sources.jar**, and **janimation-1.0.0-javadoc.jar** and place it into your project’s `libs/` folder.  
+
+**Gradle**  
 ```gradle
-implementation files('libs/janimation-1.0.0.jar')
+dependencies {
+    implementation files('libs/janimation-1.0.0.jar')
+    compileOnly files('libs/janimation/janimation-1.0.0-sources.jar')  
+    compileOnly files('libs/janimation/janimation-1.0.0-javadoc.jar')
+}
 ```
 
-**Maven (local install)**
+**Maven (local install)**  
+Since JAnimation isn’t on Maven Central, you can install it into your local Maven repository:  
+
 ```bash
-mvn install:install-file   -Dfile=janimation-1.0.0.jar   -DgroupId=org.rabbittownsoftware   -DartifactId=janimation   -Dversion=1.0.0   -Dpackaging=jar
+mvn install:install-file     
+-Dfile=janimation-1.0.0.jar     
+-DgroupId=org.rabbittownsoftware     
+-DartifactId=janimation     
+-Dversion=1.0.0     
+-Dpackaging=jar
 ```
 
-### Option 2 – Source & Javadoc
-Include `janimation-1.0.0-sources.jar` and `janimation-1.0.0-javadoc.jar` in your IDE for full inline documentation.
+Then include it in your `pom.xml`:  
+```xml
+<dependency>
+  <groupId>org.rabbittownsoftware</groupId>
+  <artifactId>janimation</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 ---
+### Attach Sources and Javadoc (Optional)
+
+To get **inline documentation and source browsing** inside your IDE, download the extra JARs from the release:  
+
+- `janimation-1.0.0-sources.jar`  
+- `janimation-1.0.0-javadoc.jar`  
+
+Attach them manually in your IDE:  
+
+**IntelliJ IDEA**  
+1. Right-click the dependency in the Project view.  
+2. Select **Library Properties**.  
+3. Attach the `-sources.jar` and `-javadoc.jar`.  
+
+**Eclipse**  
+1. Right-click the library under *Referenced Libraries*.  
+2. Select **Properties → Javadoc Location**.  
+3. Point to the `-javadoc.jar`.  
+4. Do the same for **Source Attachment** with the `-sources.jar`.  
+
+---
+### Option 3 – Build From Source (For contributors)
+
+Clone the repo and build with Gradle:  
+
+```bash
+git clone https://github.com/Rabbit-Town-Software/janimation.git
+cd janimation
+./gradlew build
+```
+
+This produces JARs under `build/libs/`, which you can then include in your project manually.  
+
 
 ## Example
 
