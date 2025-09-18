@@ -81,43 +81,6 @@ cd janimation
 
 This produces JARs under `build/libs/`, which you can then include in your project manually.  
 
-
-## Example
-
-```java
-// Define an Animatable entity
-public class Player implements Animatable 
-{
-    private float x, y;
-
-    @Override public float getX() { return x; }
-    @Override public float getY() { return y; }
-
-    @Override
-    public void drawFrame(Graphics2D g, BufferedImage frame, int x, int y, int w, int h) 
-    {
-        g.drawImage(frame, x, y, w, h, null);
-    }
-}
-
-// Load animations
-Map<String, String[]> animationPaths = Map.of(
-    "walk", new String[]{"sprites/walk1.png", "sprites/walk2.png"},
-    "idle", new String[]{"sprites/idle1.png", "sprites/idle2.png"}
-);
-
-Map<String, BufferedImage[]> animations = AnimationLoader.loadNamedAnimations(animationPaths);
-
-// Control animations
-Player player = new Player();
-AnimationController controller = new AnimationController(player, animations);
-Animator animator = new Animator();
-
-// During game loop
-controller.play("walk");
-animator.animate(controller.getCurrentAnimation(), true, player, g2d, 0, 0, 32);
-```
-
 ---
 
 ## License
